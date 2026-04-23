@@ -1,0 +1,36 @@
+{
+    "stages": [
+        {
+            "name": "inference",
+            "nnodes": 1,
+            "ppn": 1,
+            "ngpus_per_process": 1,
+            "duration_sec": 1.0,
+            "fanout": 32.0
+        },
+        {
+            "name": "post",
+            "nnodes": 1,
+            "ppn": 1,
+            "ngpus_per_process": 0,
+            "duration_sec": 1.0,
+            "fanout": 1.0
+        },
+        {
+            "name": "sim",
+            "nnodes": 1,
+            "ppn": 12,
+            "ngpus_per_process": 1,
+            "duration_sec": 1.0,
+            "fanout": 1.0
+        },
+        {
+            "name": "training",
+            "nnodes": 1,
+            "ppn": 12,
+            "ngpus_per_process": 1,
+            "duration_sec": 1.0,
+            "fanout": 1.0
+        }
+    ]
+}

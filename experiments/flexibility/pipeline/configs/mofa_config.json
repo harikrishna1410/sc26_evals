@@ -1,0 +1,55 @@
+{
+    "stages": [
+        {
+            "name": "generate_linker",
+            "nnodes": 1,
+            "ppn": 1,
+            "ngpus_per_process": 1,
+            "duration_sec": 0.0037,
+            "fanout": 1.0,
+            "tag":"inference"
+        },
+        {
+            "name": "process_linker",
+            "nnodes": 1,
+            "ppn": 1,
+            "duration_sec": 0.0012,
+            "fanout": 0.228,
+            "tag":"post"
+        },
+        {
+            "name": "assemble_mofs",
+            "nnodes": 1,
+            "ppn": 1,
+            "duration_sec": 0.03,
+            "fanout": 0.125,
+            "tag":"post"
+        },
+        {
+            "name": "validate_structure",
+            "nnodes": 1,
+            "ppn": 1,
+            "ngpus_per_process": 1,
+            "duration_sec": 2.240,
+            "fanout": 0.086,
+            "tag":"inference"
+        },
+        {
+            "name": "optimize_cells",
+            "nnodes": 2,
+            "ppn": 12,
+            "ngpus_per_process": 1,
+            "duration_sec": 15.170,
+            "fanout": 0.0035,
+            "tag":"sim"
+        },
+        {
+            "name": "estimate_adsorption",
+            "nnodes": 1,
+            "ppn": 1,
+            "duration_sec": 21.0,
+            "fanout": 1.0,
+            "tag":"post"
+        }
+    ]
+}
