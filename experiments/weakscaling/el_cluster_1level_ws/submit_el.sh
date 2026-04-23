@@ -13,7 +13,7 @@ if [ -n "${PBS_O_WORKDIR}" ]; then
 fi
 export ZE_FLAT_DEVICE_HIERARCHY=FLAT
 
-source /lus/flare/projects/datascience/EL-SC26/el_cluster_1level_ws/.venv/bin/activate
+source $HOME/.envs/el/bin/activate
 
 dirname=$(pwd)
 echo working_dir: $dirname
