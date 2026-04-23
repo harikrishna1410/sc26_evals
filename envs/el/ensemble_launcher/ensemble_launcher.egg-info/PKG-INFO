@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: ensemble_launcher
+Version: 0.1.0
+Summary: A package for launching ensemble tasks.
+Author: Hari Tummalapalli
+Requires-Python: >=3.10
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: scienceplots
+Requires-Dist: pytest
+Requires-Dist: pytest-asyncio
+Requires-Dist: cloudpickle
+Requires-Dist: pydantic
+Requires-Dist: pyzmq
+Requires-Dist: typer
+Provides-Extra: dragonhpc
+Requires-Dist: dragonhpc; extra == "dragonhpc"
+Provides-Extra: mcp
+Requires-Dist: mcp; extra == "mcp"
+Requires-Dist: paramiko; extra == "mcp"
+Dynamic: author
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

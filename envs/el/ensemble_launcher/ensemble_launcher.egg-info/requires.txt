@@ -1,0 +1,16 @@
+numpy
+matplotlib
+scienceplots
+pytest
+pytest-asyncio
+cloudpickle
+pydantic
+pyzmq
+typer
+
+[dragonhpc]
+dragonhpc
+
+[mcp]
+mcp
+paramiko
