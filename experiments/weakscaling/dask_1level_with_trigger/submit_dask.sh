@@ -41,7 +41,7 @@ echo "Number of nodes: ${NUM_NODES}"
 for i in $(seq 1 3); do
     for SLEEPTIME_MS in 0 1 10 100 1000 60000; do
         for NUMTASKS in 10; do
-            for CONCURRENT_WORKERS in 102; do  # Add more: 24 48 102
+            for CONCURRENT_WORKERS in 64; do  # Add more: 24 48 102
                 # Calculate total tasks: tasks_per_worker * concurrent_workers * num_nodes
                 TOTAL_TASKS=$((NUMTASKS * CONCURRENT_WORKERS * NUM_NODES))
                 

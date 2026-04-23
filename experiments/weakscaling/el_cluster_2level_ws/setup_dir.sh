@@ -12,7 +12,7 @@ fi
 
 echo "Running $RESET_TYPE reset"
 
-nodes=(2048 4096 8192)
+nodes=(2 4 8 16 32 64 128 256 512 1024 2048 4096 8192)
 
 files_to_copy=(submit_el.sh)
 files_to_link=(utils.py test.py merge_timelines.py)

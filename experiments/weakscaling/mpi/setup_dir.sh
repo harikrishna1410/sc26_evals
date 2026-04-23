@@ -18,29 +18,29 @@ files_to_copy=(submit_mpiexec.sh)
 files_to_link=(utils.py task_wrapper.sh)
 
 for node in ${nodes[@]};do
-    # if [ -d $node ]; then
-    #     # Always remove checkpoints and output files
-    #     rm -rf $node/checkpoints
-    #     rm -f $node/*.e* $node/*.o*
+    if [ -d $node ]; then
+        # Always remove checkpoints and output files
+        rm -rf $node/checkpoints
+        rm -f $node/*.e* $node/*.o*
         
-    #     if [ "$RESET_TYPE" == "hard" ]; then
-    #         # Hard reset: delete timings
-    #         rm -rf $node/timings
-    #     else
-    #         # Soft reset: move timings to timings_{i}
-    #         if [ -d $node/timings ]; then
-    #             i=0
-    #             while [ -d "$node/timings_$i" ]; do
-    #                 i=$((i + 1))
-    #             done
+        if [ "$RESET_TYPE" == "hard" ]; then
+            # Hard reset: delete timings
+            rm -rf $node/timings
+        else
+            # Soft reset: move timings to timings_{i}
+            if [ -d $node/timings ]; then
+                i=0
+                while [ -d "$node/timings_$i" ]; do
+                    i=$((i + 1))
+                done
                 
-    #             echo "Moving $node/timings to $node/timings_$i"
-    #             mv $node/timings $node/timings_$i
-    #         fi
-    #     fi
-    # else
-    #     mkdir $node
-    # fi
+                echo "Moving $node/timings to $node/timings_$i"
+                mv $node/timings $node/timings_$i
+            fi
+        fi
+    else
+        mkdir $node
+    fi
 
     for f in ${files_to_copy[@]};do
         cp $f $node/$f
@@ -57,8 +57,8 @@ for node in ${nodes[@]};do
         fi
     done
 
-    # for f in ${files_to_link[@]};do
-    #     rm -f $node/$f
-    #     ln -s ../$f $node/$f
-    # done
+    for f in ${files_to_link[@]};do
+        rm -f $node/$f
+        ln -s ../$f $node/$f
+    done
 done

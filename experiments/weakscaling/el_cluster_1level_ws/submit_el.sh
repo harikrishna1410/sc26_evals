@@ -27,7 +27,7 @@ NUM_NODES=$(wc -l < ${PBS_NODEFILE})
 echo "Number of nodes: ${NUM_NODES}"
 
 for i in $(seq 1 3); do
-    for REQUEST_SIZE in 0 510 1020; do
+    for REQUEST_SIZE in 0 1020; do
         for SLEEPTIME_MS in 1000; do
             for NUMTASKS in 10; do
                 for nlevels in 1; do
