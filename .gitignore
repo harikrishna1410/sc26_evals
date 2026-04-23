@@ -1,0 +1,6 @@
+# Python cache
+__pycache__/
+
+# Document and image files
+*.pdf
+*.png
