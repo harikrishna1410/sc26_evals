@@ -85,18 +85,18 @@ class LauncherConfig(BaseModel):
         1000000  # max buffer size of the result queue in cluster mode
     )
 
-    result_flush_interval: float = 5.0  # Flush result queues every fixed time
+    result_flush_interval: float = 0.5  # Flush result queues every fixed time
 
     task_buffer_size: int = 1000000  # max buffer size of the task queue per child
 
-    task_flush_interval: float = 5.0  # Flush task queues every fixed time
+    task_flush_interval: float = 0.5  # Flush task queues every fixed time
 
     task_request_size: Optional[int] = (
         None  # size of the task request in work stealing mode
     )
 
     task_request_interval: float = (
-        5.0  # Seconds between periodic task requests in workstealing mode
+        0.5  # Seconds between periodic task requests in workstealing mode
     )
 
     mpi_config: MPIConfig = MPIConfig(

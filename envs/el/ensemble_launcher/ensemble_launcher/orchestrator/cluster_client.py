@@ -252,7 +252,7 @@ class ClusterClient:
         log_level: int = logging.INFO,
         checkpoint_timeout: float = 60.0,
         task_buffer_size: int = 10000,
-        task_flush_interval: float = 5.0,
+        task_flush_interval: float = 0.5,
     ):
         """
         Args:
