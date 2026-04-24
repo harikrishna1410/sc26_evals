@@ -14,7 +14,7 @@ fi
 module load frameworks
 
 # Activate conda environment if needed
-source ~/.envs/dask/bin/activate
+source ~/.venv/dask/bin/activate
 
 # Set environment variables
 export DASK_DISTRIBUTED__SCHEDULER__WORK_STEALING=False

@@ -12,7 +12,7 @@ if [ -n "${PBS_O_WORKDIR}" ]; then
 fi
 export ZE_FLAT_DEVICE_HIERARCHY=FLAT
 
-source $HOME/.envs/parsl_dask/bin/activate
+source $HOME/.venv/parsl_dask/bin/activate
 
 for i in 4; do
     NTASKS=$((10**i))

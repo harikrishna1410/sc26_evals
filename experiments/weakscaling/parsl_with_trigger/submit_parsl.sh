@@ -12,7 +12,7 @@ if [ -n "${PBS_O_WORKDIR}" ]; then
 fi
 export ZE_FLAT_DEVICE_HIERARCHY=FLAT
 
-source $HOME/.envs/parsl/bin/activate
+source $HOME/.venv/parsl/bin/activate
 
 dirname=$(pwd)
 export PYTHONPATH=${dirname}:${PYTHONPATH}

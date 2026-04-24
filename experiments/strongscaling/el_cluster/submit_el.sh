@@ -13,7 +13,7 @@ if [ -n "${PBS_O_WORKDIR}" ]; then
 fi
 export ZE_FLAT_DEVICE_HIERARCHY=FLAT
 
-source $HOME/.envs/el/bin/activate
+source $HOME/.venv/el/bin/activate
 
 dirname=$(pwd)
 echo working_dir: $dirname
